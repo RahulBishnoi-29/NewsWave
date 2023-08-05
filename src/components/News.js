@@ -63,7 +63,7 @@ const News = (props) => {
           <h3 className='text-center' style={{marginTop: '100px', marginBottom: '30px'}}>{props.brandName} - Top {props.category?capitalizeFirstLetter(props.category):''} Headlines</h3>
           {loading && <Spinner />}
           <div className="row">
-            {articles.map((element) => {
+            {articles?.map((element) => {
               return <div className="col-md-4" key={element.url+element.page}>
                 <NewsItem source={element.source} image={element.urlToImage} title={element.title} description={element.description} author={element.author} url={element.url} publishedAt={element.publishedAt}/>
               </div>
